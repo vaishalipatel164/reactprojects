@@ -25,7 +25,7 @@ function App() {
     console.log("Listener Add");  //Add Event Listener
 
     return () => {
-      console.log("Listener Removed");   //
+      console.log("Listener Removed");   //Remove Event Listener
     }
   },[text]);
 
