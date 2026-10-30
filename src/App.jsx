@@ -5,22 +5,22 @@ function App() {
   const [text, setText] = useState ('');
   const [name, setName] = useState ('Vaishu')
 
-  // // Variation 1 -> Every Render
+  // // Variation 1 -> Every Render.
   // useEffect(() => {
   //   console.log("UI RENDERING DONE")
   // });
 
-  // //Variation 2 -> First render
-  // useEffect( () => {
-  //   console.log("UI RENDERING DONE");
-  // },[]);
+  //Variation 2 -> First render.
+  useEffect( () => {
+    console.log("UI RENDERING DONE");
+  },[]);
 
-  // //Variation 3 -> First Render + Whenever dependency changes
+  // //Variation 3 -> First Render + Whenever dependency changes.
   // useEffect (() => {
   //   console.log("Change Observed")
   // }, [name]);
 
-  //Variation 4 -> To Handle Umounting of a Component
+  //Variation 4 -> To Handle Umounting of a Component.
   useEffect (() => {
     console.log("Listener Add");  //Add Event Listener
 
