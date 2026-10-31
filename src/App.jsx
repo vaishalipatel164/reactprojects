@@ -6,9 +6,9 @@ function App() {
   const [name, setName] = useState ('Vaishu')
 
   // // Variation 1 -> Every Render.
-  // useEffect(() => {
-  //   console.log("UI RENDERING DONE")
-  // });
+  useEffect(() => {
+    console.log("UI RENDERING DONE")
+  });
 
   //Variation 2 -> First render.
   useEffect( () => {
@@ -16,9 +16,9 @@ function App() {
   },[]);
 
   // //Variation 3 -> First Render + Whenever dependency changes.
-  // useEffect (() => {
-  //   console.log("Change Observed")
-  // }, [name]);
+  useEffect (() => {
+    console.log("Change Observed")
+  }, [name]);
 
   //Variation 4 -> To Handle Umounting of a Component.
   useEffect (() => {
