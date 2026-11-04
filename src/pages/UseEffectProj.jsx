@@ -13,6 +13,8 @@ function UseEffectProj() {
                 const output = await res.json();
                 //Save Data into the Variable:
                 setCourses(output.data);
+                console.log("Courses value");
+                console.log(courses);
             }
             catch(error){
                 toast.error("Something Went Wrong");
@@ -23,9 +25,15 @@ function UseEffectProj() {
   return (
     <>
      <div>
-        <Navbar />
-        <Filter filterData = {filterData}/>
-        <Cards courses={courses} />
+        <div>
+            <Navbar />
+        </div>
+        <div>
+            <Filter filterData = {filterData}/>
+        </div>
+        <div>
+             <Cards courses={courses} />
+        </div>
      </div>
     </>
   );
