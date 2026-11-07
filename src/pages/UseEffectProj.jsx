@@ -10,11 +10,15 @@ function UseEffectProj() {
 
   const [courses, setCourses] = useState (null);    //State Variable
   const [loading, setLoading] = useState (true);    //State Variable
+  const [category, setCategory] = useState (filterData[0].title);
 
     async function fetchData() {
       setLoading(true);
         try{
             let response =await fetch(apiUrl);
+            if (!response.ok) {
+  throw new Error("API Fetch Failed");
+}
             let output = await response.json();
             //output 
             setCourses(output.data);
@@ -22,7 +26,9 @@ function UseEffectProj() {
         catch(error) {
           toast.error("Any issue in network");
         }
-        setLoading(false);
+        finally {
+            setLoading(false);
+        }
     }
     useEffect(() => {
       fetchData();
@@ -35,11 +41,11 @@ function UseEffectProj() {
         </div>
         <div className="bg-blue-900 h-screen ">
           <div>
-          <Filter filterData={filterData} />
+          <Filter filterData={filterData} category={category} setCategory={setCategory}/>
         </div>
         <div className="w-11/12 max-w-300 mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
           {
-          loading ? (<Spinner />) : (<Cards courses={courses} />)
+          loading ? (<Spinner />) : (<Cards courses={courses} category={category} />)
           }
         </div>
         </div>
