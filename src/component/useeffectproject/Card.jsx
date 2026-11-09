@@ -3,9 +3,7 @@ import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 function Card({ course, likedCourses, setLikedCourses }) {
-  let course = course;
-  let likedCourses = likedCourses;
-  let setLikedCourses = setLikedCourses;
+ 
   function clickHandler() {
     if(likedCourses.includes(course.id)) {
       setLikedCourses((prev) => prev.filter((cid) => cid !== course.id));
@@ -24,7 +22,8 @@ function Card({ course, likedCourses, setLikedCourses }) {
   return (
     <div className="w-75 bg-blue-950 rounded-md overflow-hidden bg-opacity-80">
       <div className="relative">
-        <img src={course.image.url}/>
+        <img src={course.image.url}   alt={course.title}
+          className="w-full h-44 object-cover"/>
         <div className="w-6 h-6 bg-white rounded-full absolute right-2 bottom-3 grid place-items-center">
         <button onClick={clickHandler}>
           {
@@ -37,7 +36,7 @@ function Card({ course, likedCourses, setLikedCourses }) {
         <p className="text-white font-semibold text-lg leading-6">{course.title}</p>
         <p className="text-white mt-2">
           {
-            course.description.length >100 ? (course.description.substr(0, 100)) + "..." : (course.description)
+            course.description.length >100 ? (course.description.substring(0, 100)) + "..." : (course.description)
           }
         </p>
       </div>
