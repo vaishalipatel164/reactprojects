@@ -3,7 +3,8 @@ import './App.css'
 // import UseEffect from './pages/UseEffect';
 // import UseEffectProj from './pages/UseEffectProj';
 // import TestimonialProj from './pages/TestimonialProj';
-import Form from './pages/Form';
+// import Form from './pages/Form';
+import FormProj from './pages/FormProj';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
     {/* <UseEffect /> */}
     {/* <UseEffectProj /> */}
     {/* <TestimonialProj /> */}
-    <Form />
+    {/* <Form /> */}
+    <FormProj />
     </>
   );
 }
