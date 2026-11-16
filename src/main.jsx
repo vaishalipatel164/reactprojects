@@ -10,8 +10,9 @@ createRoot(document.getElementById('root')).render(
    <div>
     <BrowserRouter>
      <App />
+    <ToastContainer />
     </BrowserRouter>
-     <ToastContainer />
+    
    </div>
  
 )

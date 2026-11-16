@@ -5,7 +5,8 @@ import './App.css'
 // import TestimonialProj from './pages/TestimonialProj';
 // import Form from './pages/Form';
 // import FormProj from './pages/FormProj';
-import Practice from './pages/Practice';
+// import Practice from './pages/Practice';
+import NavWebsite from './pages/NavWebsite';
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
     {/* <TestimonialProj /> */}
     {/* <Form /> */}
     {/* <FormProj /> */}
-     <Practice />
+    {/* <Practice /> */}
+    <NavWebsite />
+
     </>
   );
 }
