@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 import logo from "../../assets/logo.png"
 import { toast } from 'react-toastify';
 
-function Navbar({isloggedIn, setIsLoggedIN}) {
+function Navbar(props) {
+    let isloggedIn = props.isloggedIn;
+    let setIsLoggedIN = props.setIsLoggedIN;
     
   return (
     <>
@@ -13,7 +15,7 @@ function Navbar({isloggedIn, setIsLoggedIN}) {
         </Link>
 
         <nav>
-            <ul className='flex gap-3 '>
+            <ul className='flex gap-3'>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -35,7 +37,7 @@ function Navbar({isloggedIn, setIsLoggedIN}) {
               </Link>
 
               <Link to="/signup">
-                <button>Sign Up</button>
+                <button >Sign Up</button>
               </Link>
             </>
           )}
@@ -44,7 +46,8 @@ function Navbar({isloggedIn, setIsLoggedIN}) {
                 <Link to="/">
                     <button onClick={() => {
                         setIsLoggedIN(false);
-                        toast.success("Logged In");
+                        toast.success("Logged Out");
+                        
                     }}>
                         Log Out
                         </button>
