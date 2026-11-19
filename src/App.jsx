@@ -1,4 +1,4 @@
-import {React} from 'react';
+import React from 'react';
 import './App.css'
 // import UseEffect from './pages/UseEffect';
 // import UseEffectProj from './pages/UseEffectProj';
